@@ -52,7 +52,7 @@
                     this.NewPassword.Text);
                 if (result.Succeeded)
                 {
-                    ApplicationUser user = manager.FindById(this.User.Identity.GetUserId());
+                    User user = manager.FindById(this.User.Identity.GetUserId());
                     IdentityHelper.SignIn(manager, user, false);
                     this.Response.Redirect("~/Account/Manage?m=ChangePwdSuccess");
                 }

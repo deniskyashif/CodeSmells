@@ -32,7 +32,7 @@
 
             if (result.Succeeded)
             {
-                ApplicationUser user = manager.FindById(this.User.Identity.GetUserId());
+                User user = manager.FindById(this.User.Identity.GetUserId());
 
                 if (user != null)
                 {

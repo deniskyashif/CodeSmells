@@ -45,7 +45,7 @@
                     this.RedirectOnFail();
                     return;
                 }
-                ApplicationUser user = manager.Find(loginInfo.Login);
+                User user = manager.Find(loginInfo.Login);
                 if (user != null)
                 {
                     IdentityHelper.SignIn(manager, user, false);
@@ -92,7 +92,7 @@
                 return;
             }
             var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var user = new ApplicationUser {UserName = this.email.Text, Email = this.email.Text};
+            var user = new User {UserName = this.email.Text, Email = this.email.Text};
             IdentityResult result = manager.Create(user);
             if (result.Succeeded)
             {

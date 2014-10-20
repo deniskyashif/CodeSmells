@@ -19,7 +19,7 @@
             {
                 // Validate the user's email address
                 var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                ApplicationUser user = manager.FindByName(this.Email.Text);
+                User user = manager.FindByName(this.Email.Text);
                 if (user == null || !manager.IsEmailConfirmed(user.Id))
                 {
                     this.FailureText.Text = "The user either does not exist or is not confirmed.";

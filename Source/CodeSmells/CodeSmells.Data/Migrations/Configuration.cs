@@ -2,7 +2,7 @@ namespace CodeSmells.Data.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<CodeSmellsDbContext>
     {
         public Configuration()
         {
@@ -10,7 +10,7 @@ namespace CodeSmells.Data.Migrations
             this.AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(ApplicationDbContext context)
+        protected override void Seed(CodeSmellsDbContext context)
         {
         }
     }

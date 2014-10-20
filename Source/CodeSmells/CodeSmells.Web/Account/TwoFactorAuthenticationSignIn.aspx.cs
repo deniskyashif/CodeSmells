@@ -62,7 +62,7 @@
                 this.Response.Redirect("/Account/Error");
             }
 
-            ApplicationUser user = this.manager.FindById(this.signinManager.GetVerifiedUserId());
+            User user = this.manager.FindById(this.signinManager.GetVerifiedUserId());
             if (user != null)
             {
                 string code = this.manager.GenerateTwoFactorToken(user.Id, this.Providers.SelectedValue);

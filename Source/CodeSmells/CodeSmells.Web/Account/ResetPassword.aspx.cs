@@ -19,7 +19,7 @@
             {
                 var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
-                ApplicationUser user = manager.FindByName(this.Email.Text);
+                User user = manager.FindByName(this.Email.Text);
                 if (user == null)
                 {
                     this.ErrorMessage.Text = "No user found";

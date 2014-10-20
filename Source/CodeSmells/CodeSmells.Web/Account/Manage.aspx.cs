@@ -95,7 +95,7 @@
             {
                 return;
             }
-            ApplicationUser user = manager.FindById(this.User.Identity.GetUserId());
+            User user = manager.FindById(this.User.Identity.GetUserId());
             if (user != null)
             {
                 IdentityHelper.SignIn(manager, user, false);

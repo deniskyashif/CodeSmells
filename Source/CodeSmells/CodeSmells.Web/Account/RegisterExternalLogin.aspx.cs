@@ -12,13 +12,13 @@
     {
         protected string ProviderName
         {
-            get { return (string) this.ViewState["ProviderName"] ?? String.Empty; }
+            get { return (string)this.ViewState["ProviderName"] ?? String.Empty; }
             private set { this.ViewState["ProviderName"] = value; }
         }
 
         protected string ProviderAccountKey
         {
-            get { return (string) this.ViewState["ProviderAccountKey"] ?? String.Empty; }
+            get { return (string)this.ViewState["ProviderAccountKey"] ?? String.Empty; }
             private set { this.ViewState["ProviderAccountKey"] = value; }
         }
 
@@ -31,40 +31,40 @@
         {
             // Process the result from an auth provider in the request
             this.ProviderName = IdentityHelper.GetProviderNameFromRequest(this.Request);
-            if (String.IsNullOrEmpty(this.ProviderName))
+            if(String.IsNullOrEmpty(this.ProviderName))
             {
                 this.RedirectOnFail();
                 return;
             }
-            if (!this.IsPostBack)
+            if(!this.IsPostBack)
             {
                 var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 ExternalLoginInfo loginInfo = this.Context.GetOwinContext().Authentication.GetExternalLoginInfo();
-                if (loginInfo == null)
+                if(loginInfo == null)
                 {
                     this.RedirectOnFail();
                     return;
                 }
                 User user = manager.Find(loginInfo.Login);
-                if (user != null)
+                if(user != null)
                 {
                     IdentityHelper.SignIn(manager, user, false);
                     IdentityHelper.RedirectToReturnUrl(this.Request.QueryString["ReturnUrl"], this.Response);
                 }
-                else if (this.User.Identity.IsAuthenticated)
+                else if(this.User.Identity.IsAuthenticated)
                 {
                     // Apply Xsrf check when linking
                     ExternalLoginInfo verifiedloginInfo =
                         this.Context.GetOwinContext()
                             .Authentication.GetExternalLoginInfo(IdentityHelper.XsrfKey, this.User.Identity.GetUserId());
-                    if (verifiedloginInfo == null)
+                    if(verifiedloginInfo == null)
                     {
                         this.RedirectOnFail();
                         return;
                     }
 
                     IdentityResult result = manager.AddLogin(this.User.Identity.GetUserId(), verifiedloginInfo.Login);
-                    if (result.Succeeded)
+                    if(result.Succeeded)
                     {
                         IdentityHelper.RedirectToReturnUrl(this.Request.QueryString["ReturnUrl"], this.Response);
                     }
@@ -87,23 +87,23 @@
 
         private void CreateAndLoginUser()
         {
-            if (!this.IsValid)
+            if(!this.IsValid)
             {
                 return;
             }
             var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var user = new User {UserName = this.email.Text, Email = this.email.Text};
             IdentityResult result = manager.Create(user);
-            if (result.Succeeded)
+            if(result.Succeeded)
             {
                 ExternalLoginInfo loginInfo = this.Context.GetOwinContext().Authentication.GetExternalLoginInfo();
-                if (loginInfo == null)
+                if(loginInfo == null)
                 {
                     this.RedirectOnFail();
                     return;
                 }
                 result = manager.AddLogin(user.Id, loginInfo.Login);
-                if (result.Succeeded)
+                if(result.Succeeded)
                 {
                     IdentityHelper.SignIn(manager, user, false);
 
@@ -120,7 +120,7 @@
 
         private void AddErrors(IdentityResult result)
         {
-            foreach (string error in result.Errors)
+            foreach(string error in result.Errors)
             {
                 this.ModelState.AddModelError("", error);
             }

@@ -15,12 +15,12 @@
 
         protected void Forgot(object sender, EventArgs e)
         {
-            if (this.IsValid)
+            if(this.IsValid)
             {
                 // Validate the user's email address
                 var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 User user = manager.FindByName(this.Email.Text);
-                if (user == null || !manager.IsEmailConfirmed(user.Id))
+                if(user == null || !manager.IsEmailConfirmed(user.Id))
                 {
                     this.FailureText.Text = "The user either does not exist or is not confirmed.";
                     this.ErrorMessage.Visible = true;

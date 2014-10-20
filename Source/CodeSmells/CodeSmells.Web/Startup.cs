@@ -1,7 +1,7 @@
 ﻿using CodeSmells.Web;
 using Microsoft.Owin;
 
-[assembly: OwinStartup(typeof (Startup))]
+[assembly: OwinStartup(typeof(Startup))]
 
 namespace CodeSmells.Web
 {

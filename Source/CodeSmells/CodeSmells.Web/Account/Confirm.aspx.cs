@@ -14,11 +14,11 @@
         {
             string code = IdentityHelper.GetCodeFromRequest(this.Request);
             string userId = IdentityHelper.GetUserIdFromRequest(this.Request);
-            if (code != null && userId != null)
+            if(code != null && userId != null)
             {
                 var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 IdentityResult result = manager.ConfirmEmail(userId, code);
-                if (result.Succeeded)
+                if(result.Succeeded)
                 {
                     this.successPanel.Visible = true;
                     return;

@@ -23,7 +23,7 @@
         protected void Page_Load(object sender, EventArgs e)
         {
             string userId = this.signinManager.GetVerifiedUserId();
-            if (userId == null)
+            if(userId == null)
             {
                 this.Response.Redirect("/Account/Error", true);
             }
@@ -39,7 +39,7 @@
 
             SignInStatus result = this.signinManager.TwoFactorSignIn(this.SelectedProvider.Value, this.Code.Text,
                 rememberMe, this.RememberBrowser.Checked);
-            switch (result)
+            switch(result)
             {
                 case SignInStatus.Success:
                     IdentityHelper.RedirectToReturnUrl(this.Request.QueryString["ReturnUrl"], this.Response);
@@ -57,13 +57,13 @@
 
         protected void ProviderSubmit_Click(object sender, EventArgs e)
         {
-            if (!this.signinManager.SendTwoFactorCode(this.Providers.SelectedValue))
+            if(!this.signinManager.SendTwoFactorCode(this.Providers.SelectedValue))
             {
                 this.Response.Redirect("/Account/Error");
             }
 
             User user = this.manager.FindById(this.signinManager.GetVerifiedUserId());
-            if (user != null)
+            if(user != null)
             {
                 string code = this.manager.GenerateTwoFactorToken(user.Id, this.Providers.SelectedValue);
             }

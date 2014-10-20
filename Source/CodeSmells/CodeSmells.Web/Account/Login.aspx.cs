@@ -14,7 +14,7 @@
             //ForgotPasswordHyperLink.NavigateUrl = "Forgot";
             this.OpenAuthLogin.ReturnUrl = this.Request.QueryString["ReturnUrl"];
             string returnUrl = HttpUtility.UrlEncode(this.Request.QueryString["ReturnUrl"]);
-            if (!String.IsNullOrEmpty(returnUrl))
+            if(!String.IsNullOrEmpty(returnUrl))
             {
                 this.RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
@@ -22,7 +22,7 @@
 
         protected void LogIn(object sender, EventArgs e)
         {
-            if (this.IsValid)
+            if(this.IsValid)
             {
                 // Validate the user password
                 var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
@@ -33,7 +33,7 @@
                 SignInStatus result = signinManager.PasswordSignIn(this.Email.Text, this.Password.Text,
                     this.RememberMe.Checked, false);
 
-                switch (result)
+                switch(result)
                 {
                     case SignInStatus.Success:
                         IdentityHelper.RedirectToReturnUrl(this.Request.QueryString["ReturnUrl"], this.Response);

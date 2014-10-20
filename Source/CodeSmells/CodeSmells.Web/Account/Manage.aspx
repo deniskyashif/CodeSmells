@@ -56,7 +56,7 @@
                             There are no two-factor authentication providers configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=313242">this article</a>
                             for details on setting up this ASP.NET application to support two-factor authentication.
                         </p>
-                        <% if (this.TwoFactorEnabled)
+                        <% if(this.TwoFactorEnabled)
                            { %> 
                             <%--
                         Enabled

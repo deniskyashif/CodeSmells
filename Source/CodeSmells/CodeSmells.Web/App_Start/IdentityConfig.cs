@@ -79,7 +79,7 @@
             manager.EmailService = new EmailService();
             manager.SmsService = new SmsService();
             IDataProtectionProvider dataProtectionProvider = options.DataProtectionProvider;
-            if (dataProtectionProvider != null)
+            if(dataProtectionProvider != null)
             {
                 manager.UserTokenProvider =
                     new DataProtectorTokenProvider<User>(dataProtectionProvider.Create("ASP.NET Identity"));
@@ -98,7 +98,7 @@
 
         public override Task<ClaimsIdentity> CreateUserIdentityAsync(User user)
         {
-            return user.GenerateUserIdentityAsync((ApplicationUserManager) this.UserManager);
+            return user.GenerateUserIdentityAsync((ApplicationUserManager)this.UserManager);
         }
 
         public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options,

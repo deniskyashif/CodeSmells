@@ -19,7 +19,7 @@
 
         protected void Code_Click(object sender, EventArgs e)
         {
-            if (!this.ModelState.IsValid)
+            if(!this.ModelState.IsValid)
             {
                 this.ModelState.AddModelError("", "Invalid code");
                 return;
@@ -30,11 +30,11 @@
             IdentityResult result = manager.ChangePhoneNumber(this.User.Identity.GetUserId(), this.PhoneNumber.Value,
                 this.Code.Text);
 
-            if (result.Succeeded)
+            if(result.Succeeded)
             {
                 User user = manager.FindById(this.User.Identity.GetUserId());
 
-                if (user != null)
+                if(user != null)
                 {
                     IdentityHelper.SignIn(manager, user, false);
                     this.Response.Redirect("/Account/Manage?m=AddPhoneNumberSuccess");

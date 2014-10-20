@@ -15,18 +15,18 @@
         protected void Reset_Click(object sender, EventArgs e)
         {
             string code = IdentityHelper.GetCodeFromRequest(this.Request);
-            if (code != null)
+            if(code != null)
             {
                 var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
                 User user = manager.FindByName(this.Email.Text);
-                if (user == null)
+                if(user == null)
                 {
                     this.ErrorMessage.Text = "No user found";
                     return;
                 }
                 IdentityResult result = manager.ResetPassword(user.Id, code, this.Password.Text);
-                if (result.Succeeded)
+                if(result.Succeeded)
                 {
                     this.Response.Redirect("~/Account/ResetPasswordConfirmation");
                     return;

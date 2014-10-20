@@ -42,7 +42,7 @@
             IdentityResult result = manager.RemoveLogin(this.User.Identity.GetUserId(),
                 new UserLoginInfo(loginProvider, providerKey));
             string msg = String.Empty;
-            if (result.Succeeded)
+            if(result.Succeeded)
             {
                 User user = manager.FindById(this.User.Identity.GetUserId());
                 IdentityHelper.SignIn(manager, user, false);

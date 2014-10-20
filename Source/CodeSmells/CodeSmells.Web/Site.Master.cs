@@ -17,7 +17,7 @@
             // The code below helps to protect against XSRF attacks
             HttpCookie requestCookie = this.Request.Cookies[AntiXsrfTokenKey];
             Guid requestCookieGuidValue;
-            if (requestCookie != null && Guid.TryParse(requestCookie.Value, out requestCookieGuidValue))
+            if(requestCookie != null && Guid.TryParse(requestCookie.Value, out requestCookieGuidValue))
             {
                 // Use the Anti-XSRF token from the cookie
                 this._antiXsrfTokenValue = requestCookie.Value;
@@ -34,7 +34,7 @@
                     HttpOnly = true,
                     Value = this._antiXsrfTokenValue
                 };
-                if (FormsAuthentication.RequireSSL && this.Request.IsSecureConnection)
+                if(FormsAuthentication.RequireSSL && this.Request.IsSecureConnection)
                 {
                     responseCookie.Secure = true;
                 }
@@ -46,7 +46,7 @@
 
         protected void master_Page_PreLoad(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
+            if(!this.IsPostBack)
             {
                 // Set Anti-XSRF token
                 this.ViewState[AntiXsrfTokenKey] = this.Page.ViewStateUserKey;
@@ -55,8 +55,8 @@
             else
             {
                 // Validate the Anti-XSRF token
-                if ((string) this.ViewState[AntiXsrfTokenKey] != this._antiXsrfTokenValue
-                    || (string) this.ViewState[AntiXsrfUserNameKey] != (this.Context.User.Identity.Name ?? String.Empty))
+                if((string)this.ViewState[AntiXsrfTokenKey] != this._antiXsrfTokenValue
+                   || (string)this.ViewState[AntiXsrfUserNameKey] != (this.Context.User.Identity.Name ?? String.Empty))
                 {
                     throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
                 }

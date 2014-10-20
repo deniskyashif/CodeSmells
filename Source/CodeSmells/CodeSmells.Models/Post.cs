@@ -31,10 +31,7 @@
 
         public int Rating
         {
-            get
-            {
-                return this.Ratings.Sum(r => (int)r.Type);
-            }
+            get { return this.Ratings.Sum(r => (int)r.Type); }
         }
     }
 }

@@ -15,10 +15,10 @@
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (this.IsPostBack)
+            if(this.IsPostBack)
             {
                 string provider = this.Request.Form["provider"];
-                if (provider == null)
+                if(provider == null)
                 {
                     return;
                 }
@@ -29,7 +29,7 @@
                         provider, this.ReturnUrl));
                 var properties = new AuthenticationProperties {RedirectUri = redirectUrl};
                 // Add xsrf verification when linking accounts
-                if (this.Context.User.Identity.IsAuthenticated)
+                if(this.Context.User.Identity.IsAuthenticated)
                 {
                     properties.Dictionary[IdentityHelper.XsrfKey] = this.Context.User.Identity.GetUserId();
                 }

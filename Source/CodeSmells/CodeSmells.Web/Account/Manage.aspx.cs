@@ -40,10 +40,10 @@
 
             IAuthenticationManager authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
 
-            if (!this.IsPostBack)
+            if(!this.IsPostBack)
             {
                 // Determine the sections to render
-                if (this.HasPassword(manager))
+                if(this.HasPassword(manager))
                 {
                     this.ChangePassword.Visible = true;
                 }
@@ -55,7 +55,7 @@
 
                 // Render success message
                 string message = this.Request.QueryString["m"];
-                if (message != null)
+                if(message != null)
                 {
                     // Strip the query string from action
                     this.Form.Action = this.ResolveUrl("~/Account/Manage");
@@ -80,7 +80,7 @@
 
         private void AddErrors(IdentityResult result)
         {
-            foreach (string error in result.Errors)
+            foreach(string error in result.Errors)
             {
                 this.ModelState.AddModelError("", error);
             }
@@ -91,12 +91,12 @@
         {
             var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             IdentityResult result = manager.SetPhoneNumber(this.User.Identity.GetUserId(), null);
-            if (!result.Succeeded)
+            if(!result.Succeeded)
             {
                 return;
             }
             User user = manager.FindById(this.User.Identity.GetUserId());
-            if (user != null)
+            if(user != null)
             {
                 IdentityHelper.SignIn(manager, user, false);
                 this.Response.Redirect("/Account/Manage?m=RemovePhoneNumberSuccess");

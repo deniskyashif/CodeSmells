@@ -12,7 +12,7 @@
         {
             var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             string code = manager.GenerateChangePhoneNumberToken(this.User.Identity.GetUserId(), this.PhoneNumber.Text);
-            if (manager.SmsService != null)
+            if(manager.SmsService != null)
             {
                 var message = new IdentityMessage
                 {

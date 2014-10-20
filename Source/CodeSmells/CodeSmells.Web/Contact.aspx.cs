@@ -3,7 +3,7 @@
     using System;
     using System.Web.UI;
 
-    public partial class Contact : Page
+    public partial class Contact : ExtendedPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

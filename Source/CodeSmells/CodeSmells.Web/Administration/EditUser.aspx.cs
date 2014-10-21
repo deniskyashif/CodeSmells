@@ -46,8 +46,8 @@ namespace CodeSmells.Web.Administration
         protected void LinkBtnSaveUser_Click(object sender, EventArgs e)
         {
             var user = this.Data.Users.Find(userId);
-            this.TbUserName.Text = user.UserName;
-            this.TbEmail.Text = user.Email;
+            user.UserName = this.TbUserName.Text;
+            user.Email = this.TbEmail.Text;
 
             this.Data.SaveChanges();
             Response.Redirect("~/Administration/Users", false);

@@ -2,6 +2,9 @@
 {
     using System;
     using FileSniffing;
+    using CodeSmells.Models;
+    using CodeSmells.Data;
+    using DataGenerators;
 
     class EntryPoint
     {
@@ -34,6 +37,21 @@
             Console.WriteLine("Snippet extracting finished!");
         }
 
+        static CodeSmellsData codeSmellsData = new CodeSmellsData();
+
+        static void GenerateFakeUsers()
+        {
+            Console.WriteLine("Generating fake users...");
+            UserGenerator userGenerator = new UserGenerator(codeSmellsData);
+            userGenerator.Generate();
+            Console.WriteLine("Fake users generated!");
+        }
+
+        /*static void GenerateFakePosts()
+        { 
+            
+        }*/
+
         static void Main(string[] args)
         {
             try
@@ -44,7 +62,10 @@
                 //SniffForCodeFiles();
                 //Second: Extract code snippets.
                 //ExtractSnippetsFromFiles();
-                //Third:...
+                //Third: Generate some users.
+                GenerateFakeUsers();
+                //Get required info and generate posts
+                //GenerateFakePosts()
 
             }
             catch (Exception boom) 

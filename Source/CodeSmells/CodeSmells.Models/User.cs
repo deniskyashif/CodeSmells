@@ -9,10 +9,16 @@
 
     public class User : IdentityUser
     {
-        public User()
+        public User(string userName=""):base(userName)
         {
             this.Posts = new HashSet<Post>();
             this.Ratings = new HashSet<Rating>();
+        }
+
+        public User()
+        {
+            this.Posts = new HashSet<Post>();
+            this.Ratings = new HashSet<Rating>();        
         }
 
         public virtual ICollection<Post> Posts { get; set; }

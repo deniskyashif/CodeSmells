@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administration/MasterPageAdmins.master" AutoEventWireup="true"
     CodeBehind="Users.aspx.cs" Inherits="CodeSmells.Web.Administration.Users" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Users</h2>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderAdminArea" runat="server">
+    
     <asp:GridView CssClass="table table-striped table-bordered" ID="GridViewUsers" runat="server"
         AutoGenerateColumns="False" DataKeyNames="Id"
-        PageSize="2" AllowPaging="true" AllowSorting="true"
+        PageSize="10" AllowPaging="true" AllowSorting="true"
         ItemType="CodeSmells.Models.User"
         SelectMethod="GridViewUsers_GetData">
         <Columns>

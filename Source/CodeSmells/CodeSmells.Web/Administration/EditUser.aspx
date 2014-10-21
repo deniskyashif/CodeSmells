@@ -1,10 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditUser.aspx.cs" Inherits="CodeSmells.Web.Administration.EditUser" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administration/MasterPageAdmins.master" AutoEventWireup="true" CodeBehind="EditUser.aspx.cs" Inherits="CodeSmells.Web.Administration.EditUser" %>
 
-<asp:Content ID="EditUserContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="EditUserContent" ContentPlaceHolderID="ContentPlaceHolderAdminArea" runat="server">
     
-    <asp:LinkButton ID="LinkButtonReturn" runat="server" CssClass="btn btn-default" 
-                    Text="Back" OnClick="LinkButtonReturn_Click" />
-
     <h2>Edit User</h2>
 
     <div class="form-group">
@@ -18,15 +15,16 @@
     </div>
     
     <div class="btn-group">
-        <asp:Button ID="ButtonBAN" runat="server" Text="BAN User" CssClass="btn btn-default" 
+        <asp:Button ID="BtnBanUser" runat="server" Text="Ban" CssClass="btn btn-default" 
                     OnClientClick=" return confirm('Do you want to Ban user ?'); "
-                    OnClick="ButtonBAN_Click" />
-        <asp:Button ID="ButtonAdmin" runat="server" Text="Add Admin" CssClass="btn btn-default" 
-                    OnClientClick=" return confirm('Do you want to create admin?'); "
-                    OnClick="ButtonAdmin_Click" />
+                    OnClick="BtnBanUser_Click" />
+        <asp:Button ID="BtnToggleAdminRole" runat="server" Text="Assign Admin Rights" CssClass="btn btn-default" 
+                    OnClientClick=" return confirm('Do you want to assign admin rights to user?'); "
+                    OnClick="BtnToggleAdminRole_Click" />
     </div>
-
-    <asp:LinkButton ID="LinkButtonSaveUser" runat="server" CssClass="btn btn-default"
-                    Text="Save Changes" OnClick="LinkButtonSaveUser_Click" />
     <br />
+    <asp:LinkButton ID="LinkBtnSaveUser" runat="server" CssClass="btn btn-default"
+                    Text="Save Changes" OnClick="LinkBtnSaveUser_Click" />
+    <br />
+    
 </asp:Content>

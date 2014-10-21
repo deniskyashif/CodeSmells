@@ -1,6 +1,7 @@
 namespace CodeSmells.Data.Migrations
 {
     using System.Data.Entity.Migrations;
+    using Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<CodeSmellsDbContext>
     {
@@ -12,6 +13,7 @@ namespace CodeSmells.Data.Migrations
 
         protected override void Seed(CodeSmellsDbContext context)
         {
+            
         }
     }
 }

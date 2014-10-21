@@ -58,6 +58,9 @@
                             <LoggedInTemplate>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li>
+                                        <a runat="server" href="~/Posts/CreatePost" title="Add New Code Smell">Create</a>
+                                    </li>
+                                    <li>
                                         <a runat="server" href="~/Account/Manage" title="Manage your account">
                                             Hello, <%: this.Context.User.Identity.GetUserName() %> !
                                         </a>

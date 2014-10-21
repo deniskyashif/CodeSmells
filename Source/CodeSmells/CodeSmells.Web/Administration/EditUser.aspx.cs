@@ -48,6 +48,7 @@ namespace CodeSmells.Web.Administration
         protected void ButtonBAN_Click(object sender, EventArgs e)
         {
             var user = this.Data.Users.Find(userId);
+            
             //TODO: Resolve roles; add/remove ban role
         }
 

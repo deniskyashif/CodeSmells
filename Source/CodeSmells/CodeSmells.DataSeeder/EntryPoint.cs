@@ -17,6 +17,7 @@
             //specify extensions
             string[] allowedExtensions = new string[] { "*.php", "*.js", "*.html", "*.cs", "*.css" };
             CodeFileSniffer fileSniffer = new CodeFileSniffer(smellyDirs, allowedExtensions, "smellyFiles.txt");
+            fileSniffer.MaxFileName = 100;
             Console.WriteLine("Started file sniffing...");
             fileSniffer.Sniff();
             Console.WriteLine("File sniffing finished!");
@@ -26,6 +27,7 @@
         {
             SnippetExtractor snippetExtractor = new SnippetExtractor("smellyFiles.txt", "snippets.txt", randomProvider);
             Console.WriteLine("Started extracting snippets...");
+            snippetExtractor.SnippetMinLength = 100;
             snippetExtractor.ExtractSnippets();
             Console.WriteLine("Snippet extracting finished!");
         }

@@ -43,9 +43,12 @@
                         //
                         string snippet = this.ExtractSnippetFromFile(smellyFile);
                         //
-                        this.snippetAccum.AppendLine();
-                        this.snippetAccum.AppendLine(extension);
-                        this.snippetAccum.AppendLine(snippet);
+                        if (this.SnippetMinLength > 0 && this.SnippetMinLength < snippet.Length)
+                        {
+                            this.snippetAccum.AppendLine();
+                            this.snippetAccum.AppendLine(extension);
+                            this.snippetAccum.AppendLine(snippet);
+                        }
                     }
                 }
                 //write result
@@ -78,7 +81,7 @@
             {
                 int start = this.randomProvider.Next(0, smellyFile.Length - 2);
                 int end = this.randomProvider.Next(start, smellyFile.Length - 1);
-                result = smellyFile.Substring(start, end-start);
+                result = smellyFile.Substring(start, end-start);               
             }
             //            
             return result;

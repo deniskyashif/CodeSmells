@@ -10,6 +10,8 @@
 
         public string[] AllowedExtensions { get; private set; }
 
+        public int MaxFileName { get; set; }
+
         public string OutputFile { get; private set; }
 
         public CodeFileSniffer(string[] directoriesToSniff, string[] allowedExtensions, string outputFile)
@@ -43,7 +45,10 @@
                     string[] files = Directory.GetFiles(directory, extension, SearchOption.AllDirectories);
                     foreach (string file in files)
                     {
-                        gatheredFiles.AppendLine(file);
+                        if (this.MaxFileName > 0 && file.Length <= this.MaxFileName)
+                        {
+                            gatheredFiles.AppendLine(file);
+                        }
                     }
                 }
             }

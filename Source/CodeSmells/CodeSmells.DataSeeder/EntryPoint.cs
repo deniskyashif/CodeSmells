@@ -7,6 +7,8 @@
     {
         static Random randomProvider=new Random();
 
+        //TODO: Extract some constants
+
         static void SniffForCodeFiles() 
         {
             //Sniff folders for code! 
@@ -36,12 +38,14 @@
         {
             try
             {
-                Console.WriteLine("CodeSmells data seeder v1.0");
+                Console.WriteLine("CodeSmells data seeder");
                 Console.WriteLine("- - -");
                 //First: Sniff for code files.
-                SniffForCodeFiles();
+                //SniffForCodeFiles();
                 //Second: Extract code snippets.
-                ExtractSnippetsFromFiles();
+                //ExtractSnippetsFromFiles();
+                //Third:...
+
             }
             catch (Exception boom) 
             {

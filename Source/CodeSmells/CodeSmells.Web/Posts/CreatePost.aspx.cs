@@ -28,8 +28,7 @@ namespace CodeSmells.Web.Posts
         }
         protected void AddPostForm_ItemInserted(object sender, FormViewInsertedEventArgs e)
         {
-            Response.Write("Post created");
-            //Response.Redirect("/"); //chage to posts
+            Response.Redirect("GetPosts.aspx"); //chage to posts
         }
         
         protected void Page_Load(object sender, EventArgs e)

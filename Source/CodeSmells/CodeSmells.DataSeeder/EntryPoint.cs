@@ -39,7 +39,7 @@
                 Console.WriteLine("CodeSmells data seeder v1.0");
                 Console.WriteLine("- - -");
                 //First: Sniff for code files.
-                //SniffForCodeFiles();
+                SniffForCodeFiles();
                 //Second: Extract code snippets.
                 ExtractSnippetsFromFiles();
             }

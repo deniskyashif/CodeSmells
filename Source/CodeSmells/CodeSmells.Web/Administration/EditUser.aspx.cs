@@ -1,9 +1,16 @@
-﻿using System;
+﻿using CodeSmells.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace CodeSmells.Web.Administration
 {
@@ -16,26 +23,27 @@ namespace CodeSmells.Web.Administration
             userId = this.Request.QueryString["userId"];
 
             var user = this.Data.Users.Find(userId);
-
-            if (user.Roles.Count > 0)
-            {
-                //TODO: resolve roles
-            }
         }
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
             var user = this.Data.Users.Find(userId);
+
             this.TbUserName.Text = user.UserName;
             this.TbEmail.Text = user.Email;
         }
-
-        protected void LinkButtonReturn_Click(object sender, EventArgs e)
+         
+        protected void BtnToggleAdminRole_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Administration/Users");
+            var user = this.Data.Users.Find(userId);
         }
 
-        protected void LinkButtonSaveUser_Click(object sender, EventArgs e)
+        protected void BtnBanUser_Click(object sender, EventArgs e)
+        {
+            var user = this.Data.Users.Find(userId);
+        }
+
+        protected void LinkBtnSaveUser_Click(object sender, EventArgs e)
         {
             var user = this.Data.Users.Find(userId);
             this.TbUserName.Text = user.UserName;
@@ -43,19 +51,6 @@ namespace CodeSmells.Web.Administration
 
             this.Data.SaveChanges();
             Response.Redirect("~/Administration/Users", false);
-        }
-
-        protected void ButtonBAN_Click(object sender, EventArgs e)
-        {
-            var user = this.Data.Users.Find(userId);
-            
-            //TODO: Resolve roles; add/remove ban role
-        }
-
-        protected void ButtonAdmin_Click(object sender, EventArgs e)
-        {
-            var user = this.Data.Users.Find(userId);
-            //TODO: Resolve roles; add/remove admin role
         }
     }
 }

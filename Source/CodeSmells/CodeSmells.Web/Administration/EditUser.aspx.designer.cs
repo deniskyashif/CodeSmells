@@ -40,30 +40,30 @@ namespace CodeSmells.Web.Administration {
         protected global::System.Web.UI.WebControls.TextBox TbEmail;
         
         /// <summary>
-        /// ButtonBAN control.
+        /// BtnBanUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonBAN;
+        protected global::System.Web.UI.WebControls.Button BtnBanUser;
         
         /// <summary>
-        /// ButtonAdmin control.
+        /// BtnToggleAdminRole control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAdmin;
+        protected global::System.Web.UI.WebControls.Button BtnToggleAdminRole;
         
         /// <summary>
-        /// LinkButtonSaveUser control.
+        /// LinkBtnSaveUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonSaveUser;
+        protected global::System.Web.UI.WebControls.LinkButton LinkBtnSaveUser;
     }
 }

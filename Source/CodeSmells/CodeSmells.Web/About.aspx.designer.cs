@@ -9,8 +9,6 @@
 
 namespace CodeSmells.Web
 {
-
-
     public partial class About
     {
     }

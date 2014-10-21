@@ -1,9 +1,8 @@
 ﻿namespace CodeSmells.Web
 {
     using System;
-    using System.Web.UI;
 
-    public partial class _Default : ExtendedPage
+    public partial class _Default : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

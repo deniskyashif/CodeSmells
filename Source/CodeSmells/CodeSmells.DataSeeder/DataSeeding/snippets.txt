@@ -1,0 +1,742 @@
+
+php
+---------------
+| Output Compression
+|--------------------------------------------------------------------------
+|
+| Enables Gzip output compression for faster page loads.  When enabled,
+| the output class will test whether your server supports Gzip.
+| Even if it does, however, not all browsers support compression
+| so enable only if you are reasonably sure your visitors can handle it.
+|
+| VERY IMPORTANT:  If you are getting a blank page when compression is enabled it
+| means you are prematurely outputting something to your browser. It could
+| even be a line of whitespace at the end of one of your scripts.  For
+| compression to work, nothing can be sent before the output buffer is called
+| by the output class.  Do not 'echo' any values with compression enabled.
+|
+*/
+$config['compress_output'] = FALSE;
+
+/*
+|--------------------------------------------------------------------------
+| Master Time Reference
+|--------------------------------------------------------------------------
+|
+| Options are 'local' or 'gmt'.  This pref tells the system whether to use
+| your server's local time as the master 'now' reference, or convert it to
+| GMT.  See the 'date helper' page of the user guide for information
+| regarding date handling.
+|
+*/
+$config['time_reference'] = 'local';
+
+
+/*
+|--------------------------------------------------------------------------
+| Rewrite PHP Short Tags
+|--------------------------------------------------------------------------
+|
+| If your PHP installation does not have short tag support enabled CI
+| can rewrite the tags on-the-fly, enabling you to utilize that syntax
+| in your view files.  Options are TRUE or FALSE (boolean)
+|
+*/
+$config['rewrite_short_tags'] = FALSE;
+
+
+/*
+|---------------------------------------------------------
+
+php
+ons = 10;
+$hash = crypt($password,$salt);
+for ($i = 0; $i < $iterations; ++$i)
+{
+	$hash = crypt($hash . $password
+
+php
+
+			<div id="contianerChild" style="position:relative;">
+				con
+
+php
+
+
+php
+l_select_db("archapterdata");
+	$queryCode="SELECT chapters.*,
+	books.bookTitle,
+	images.imageName
+	FROM chapters 
+	JOIN books ON chapters.bookId=books.id 
+	JOIN images ON chapters.chapterScene=images.id";
+	$query=mysql_query($
+
+php
+/u
+
+php
+host/aniartQuick/admin.php?iPage=$iPage&sOption=%D0%B7%D0%B0%D0%BF%D0%B8%D1%88%D0%B5%D1%82%D0%B5+%C2%BB&iStatus=1&iProducts=
+
+php
+ocation: 
+
+php
+g="<TR><TD style='height:5px;background-color:#999999;'></TD></TR>";
+			$table_postfix="</table>";
+			echo"$table_prefix_string" 
+			//table
+			echo"$table_po
+
+php
+ing;
+		private function ADD_NODE($node_value,$node_hyperefferance)
+		{
+			$hash_value_to_add= new array("node_html"=>$node_value,"node_href"=>$node_hyperefferance)
+			array_push($this->list_nodes,$hash_value_to_add);
+		}
+		public function __construct($header_panel_array)
+		{
+			$this->table_prefix_string="<table id='list_table_style' cellspacing='3px' cellpadding='3px'>";
+			$table_header_prefix="<TR style='background-color:#ee0000;'></TR>";			
+			$table_header_postfix="</TR>";
+			$table_header=$tabl
+
+php
+ublic $Row=0;
+	public $Col=0;
+	public function __construct($row,$col)
+	{
+		$this->Row=$row;
+		$this->Col=$col;
+	}
+}
+
+class MiceCage extends Cage
+{
+	public $NumberOfMice=0;
+	public $hasMice=false;
+	public function __construct($row,$col,$numberOfMice=0)
+	{
+		$this->NumberOfMice=$numberOfMice;
+		if($this->NumberOfMice!=0)
+		{
+			$this->hasMice=true;
+		}
+		parent::__construct($row,$col);
+	}	
+}
+$MICE_CAGES_COLS=20;
+$MICE_CAGES_ROWS=10;
+
+	class TaskSolver
+	{
+		private $Result;
+		private $resultCoordinates;
+		private $MICE_CAGES=array();
+		private static function mkmatrix ($rows, $cols) {
+		//$count = 1;
+		$mx = array();
+		for ($i=0; $i<$rows; $i++) {
+			for ($j=0; $j<$cols; $j++) {
+				$mx[$i][$j] = new MiceCage($i,$j);
+			}
+		}
+		return($mx);
+	}
+	
+		public function INSERT_MICE_IN_CAGE($row,$col,$numberOfMice)
+	{
+		$k=$numberOfMice;
+		if($this->MICE_CAGES[$row][$col]->hasMice==true)
+		{
+			$k=$this->MICE_CAGES[$row][$col]->NumberOfMice+$numberOfMice;
+		}		
+		$this->MICE_CAGES[$row][$col]=new MiceCage($row,$col,$k);
+	}
+	
+	public function __construct()
+	{
+		//alert("inicializirane na kletkite...");
+		$this->MICE_CAGES=$this->mkmatrix(10,10);		
+		//alert("izpulnenie na zada4ite(vkarvane na mi6ki v kletki)...");
+		//alert("predi");
+		//self::DRAW_GRID($this->MICE_CAGES);
+		//var_dump($this->MICE_CAGES);
+		$this->INSERT_MICE_IN_CAGE(1,1,1);
+		$this->INSERT_MICE_IN_CAGE(1,1,1);
+		$this->INSERT_MICE_IN_CAGE(2,1,3);
+		$this->INSERT_MICE_IN_CAGE(2,1,4);
+		$this->INSERT_MICE_IN_CAGE(5,6,9);
+		$this->INSERT_MICE_IN_CAGE(6,5,8);
+		//alert("sled");
+		//var_dump($this->MICE_CAGES);
+		//$this->DRAW_GRID();
+	}
+	private function DRAW_GRID()
+	{		
+		echo "<table border='1' >";
+		for($row=0;$row<10;$row++)
+		{
+			echo "<TR>";
+			for($col=0;$col<10;$col++)
+			{			
+				if(isset($this->resultCoordinates) AND $this->resultCoordinates->Row==$row && $this->resultCoordinates->Col==$col)
+				{
+					echo "<TD width='20' height='20' bgcolor='#ccc' style='color:red;'>";	
+					echo "*";//$this->Result;
+				}
+				else
+				{					
+					if(isset($this->MICE_C
+
+php
+
+
+php
+hp
+	hea
+
+php
+ss=
+
+php
+			var devision_container=document.getElementById('devision');
+				var devider=parseInt(devider_container.value);
+				var devision=parseInt(devision_container.value);
+				var result=devider / devision;
+				alert(result);
+			}
+		</script>
+	</head>
+	<body bgcolor='black'>
+		<form action='shit.php' method='GET' name='devider_form'>
+			<input type='textbox' id='devider'/>
+			<input type='textbox' id='devision'/>
+			<input type='submit' val
+
+php
+				}
+			$nodes_end=$indexer+$nodes_to_show;			
+			$nodes_home=$nodes_end-$nodes_to_show;
+			echo $indexer;
+			$light_back="#ccc";
+			$dark_back="#bbb";			
+			$devider_string="<TR style='background-color:#000099;height:10px;'><TD></TD></TR>";
+			echo"<table  style='width:100%;'>
+				<thead><TR style='background-color:#990000; color:#fff;'><TD>ZAGLAVIE NA NODOVE</TD></TR></thead>";
+			$k=$nodes_home;			
+				while($k<$nodes_end)
+				{
+					if($k==0)
+					{
+						echo $devider_string;
+					}
+					$node=$nodes[$k];					
+					$node_back=$light_back;
+					if($k%2==0)
+						{
+						$node_back=$dark_back;
+						}				
+					$node_string="<TR style='background-color:$node_back;'><TD>$node</TD></TR>";
+					echo $node_string;					
+					$k++;
+				}
+		echo"</table>";		
+		$valid_indexer_minus=$indexer-$nodes_to_show;
+		$valid_indexer_plus=$indexer+$nodes_to_show;
+		if($valid_indexer_minus<0)
+			{
+				$valid_indexer_minus=count($nodes)-1;
+			}
+		if($valid_indexer_plus>count($nodes)-(1+$nodes_to_show))
+			{
+				$valid_indexer_plus=0;
+			}
+		echo"<a href='?indexer=$valid_indexer_minus'>up</a> <a href='?indexer=$valid_indexer_plus'>down</a>"
+		?>
+	<
+
+php
+AGENT'];
+
+
+php
+			<img src="<?php echo $dir.$imageName.".jpg";?>" width="120px"/>									
+									</TD>
+							</TR>
+							<?php endwhile; ?>
+							</tbody>
+						</table>
+					<?php					
+					//echo var_dump($query);
+					mysql_close();
+				}
+
+php
+e(
+
+php
+$i*8)+8);
+		echo "-".$randNum;	
+	}*/
+		
+	calc(calc());
+	function calc($prev="")
+	{
+		for($k=0;$k<6;$k++)
+		{
+			return
+
+php
+)
+
+php
+ct>
+</form>
+<table>
+	<thead>
+		<tr>
+			<td>id</td>
+			<td>username</td>
+			<td>rank</td>
+		</tr>
+	</thead>
+	<?php while($user=mysql_fetch_object($query)): ?>
+	<tr>
+		<td><?php echo $user->id; ?></td>
+		<td><?php echo $user->name; ?></td>
+		<td><?php echo $user->rank; ?></td>
+	</tr>
+	<?php endwhile;
+	mysql_close();
+	
+
+php
+/100;
+		$Af=$Ar+$l1;				
+		if($Bf<=$Af)
+		{
+			//echo $l;
+			if($Br>=$Ar)
+			{
+				if($LS==0)
+				{
+					$LS=$l;
+				}
+				$L=$l;
+				//echo $Ar." | ".$Af." meet ".$Br." | ".$Bf."<br/>";
+			}			
+		}
+		//e
+
+php
+rator.$zad_p
+
+php
+6;
+	
+
+php
+Place LIKE '%Марибор%' ";
+	$query="SELECT * FROM 'warriors'  ";
+	GetWarr
+
+php
+];
+				if(isset($toRet[$battle]))
+				{
+					$toRet[$battle]++;
+				}
+				else
+				{
+					$toRet[$battle]=1;
+				}
+			}
+			echo "<table border='1'>";
+			echo"<thead><TR bgcolor='#ccc'><TD>чин</TD><TD>брой жертви</TD></TR></thead>";
+			foreach($toRet as $battle=>$num)
+			{
+				echo"<TR>";
+				echo"<TD>$battle</TD><TD>$num</TD>";
+				echo"</TR>";
+			}
+			echo "</table>";
+		}
+		mysql_close();
+	}
+	
+	function GetWarriors($query)
+	{
+		$sql_host="localhost";
+		$sql_user="root";
+		$sql_pass="";
+		$warriors_db="kolio";
+		//
+		mysql_connect($sql_host,$sql_user,$sql_pass);
+		mysql_set_charset("Utf8");
+		mysql_select_db($warriors_db);
+		//
+		//mysql_query("SELECT * FROM `warriors` ");
+		$select_query=mysql_query($query);		
+		if(mysql_num_rows($select_query)>0)
+		{		
+			echo"<h4>загинали:".mysql_num_rows($select_query)."</h4>";
+			echo "<table border='1'>";
+			echo"<thead>";
+			echo"<tr bgcolor=\"#ccc\">";
+			echo"
+					<td>№</td>
+					<td>чин</td>
+					<td>име</td>
+					<td>презиме</td>
+					<td>фамилия</td>
+					<td>дата на раждане</td>
+					<td>място на раждане</td>
+					<td>дата</td>
+					<td>място</td>
+					<td>забележка</td>
+			";
+			echo"</tr>";
+			echo"</thead>";
+			
+
+php
+tles("1944");
+?>
+<h1>
+
+php
+=false)
+					{
+						$div="";
+						$useDiv=true;
+					}
+					$filterString.=$div." $col LIKE '%".$keyword."%' ";
+				}
+			}
+		}
+		$filterString.=")";
+		if(isset(
+
+php
+	$orderStr";
+	GetWarriors($query);
+	$sum+=GetWarriorsNum($query);
+	//$ids[2]=GetWarriorIds($query);
+?>
+<h3>"Маргит" - р.Мур - Подтурен</h3>
+<h4>29.03 - 07.04.1945г.</h4>
+<?php 
+	//$orderStr="ORDER BY Rank DESC";
+	$query="SELECT * FROM warriors WHERE id NOT IN(SELECT id FROM warriors WHERE Place NOT LIKE '%Дарваш%' 
+	AND (Place IN ('с.Ястребци, Марибор', 'гр.Дравовград','гр.Чаковец') OR
+	Place LIKE '%Ястребци%' OR Place LIKE '%Чекел%' OR Place LIKE '%Кишбайом%' OR Place LIKE '%Нагятад%' OR Place LIKE '%Марибор%' OR Place LIKE '%Габерник%' OR Place LIKE '%Чаковец%' OR Place LIKE '%Дравовград%'))
+	AND
+	Date LIKE '%1945%'
+	$orderStr";
+	//echo"$query";
+	GetWarriors($query);
+	$sum+=GetWarriorsNum($query);
+	//$ids[3]=GetWarriorIds($query);
+?>
+
+<h3>Ястребци - Клагенфурт</h3>
+<h4>08.04 - 12.05.1945г.</h4>
+<?php 
+	//$orderStr="ORDER BY Rank DESC";
+	$query="SELECT * FROM warriors WHERE 
+	(Place IN ('с.Ястребци, Марибор', 'гр.Дравовград','гр.Чаковец') OR
+	Place LIKE '%Ястребци%' OR Place LIKE '%Марибор%' OR Place LIKE '%Габерник%' OR Place LIKE '
+
+php
+$year=="1945")?"selected='selected'":""; ?>>1945</option>
+				</select>
+			</p>
+			<input type="submit" value="търсете"/>
+		</form>	
+		<h
+
+php
+arriors
+
+php
+php"
+?>
+<h1>Загинали
+
+php
+
+		"���������"=>"E",
+		"�����.��."	=>"F",
+		"����.����."=
+
+php
+$query="SELECT * FROM warriors";
+	GetWarriors($query);
+
+php
+otes"=>"забележка"
+);
+
+class WarriorsSelector
+{
+	private $Host;
+	private $User;
+	private $Pass;
+	//
+	public function __construct($ho
+
+php
+?>" />
+		<title><?php echo title ?></title>
+	</head>
+	<body>
+		<h1><?php echo title ?></h1>
+		<table border="1">
+			<thead>
+				<TR>
+				<?php foreach($WARRIOR
+
+php
+turn array($a,$b);
+		}
+		public function SendRequest($dataAttach)
+		{
+			$data=$this->RetDataForReq($dataAttach);
+			echo"<script>sendReq(\"".$this->PhpFile."\",\"$data[0]\",\"$data[1]\")</script>";
+		}
+		public function GenerateLink($dataAttach)
+		{
+			$d
+
+php
+m>
+</b
+
+php
+>
+<?php 
+
+php
+
+|
+| This option allows you to add a suffix to all URLs generated by CodeIgniter.
+| For more information please see the user guide:
+|
+| http://codeigniter.com/user_guide/general/urls.html
+*/
+
+$config['url_suffix'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Default Language
+|--------------------------------------------------------------------------
+|
+| This determines which set of language files should be used. Make sure
+| there is an available translation if you intend to use something other
+| than english.
+|
+*/
+$config['language']	= 'english';
+
+/*
+|--------------------------------------------------------------------------
+| Default Character Set
+|--------------------------------------------------------------------------
+|
+| This determines which character set is used by default in various methods
+| that require a character set to be provided.
+|
+*/
+$config['charset'] = 'UTF-8';
+
+/*
+|--------------------------------------------------------------------------
+| Enable/Disable System Hooks
+|--------------------------------------------------------------------------
+|
+| If you would like to use the 'hooks' feature you must enable it by
+| setting this variable to TRUE (boolean).  See the user guide for details.
+|
+*/
+$config['enable_hooks'] = FALSE;
+
+
+/*
+|--------------------------------------------------------------------------
+| Class Extension Prefix
+|--------------------------------------------------------------------------
+|
+| This item allows you to set the filename/classname prefix when extending
+| native libraries.  For more information please see the user guide:
+|
+| http://codeigniter.com/user_guide/general/core_classes.html
+| http://codeigniter.com/user_guide/general/creating_libraries.html
+|
+*/
+$config['subclass_prefix'] = 'IDEA_';
+
+
+/*
+|--------------------------------------------------------------------------
+| Allowed URL Characters
+|--------------------------------------------------------------------------
+|
+| This lets you specify with a regular expression which characters are permitted
+| within your URLs.  When someone tries to submit a URL with disallowed
+| characters they will get a warning message.
+|
+| As a security measure you are STRONGLY encouraged to restrict URLs to
+| as few characters as possible.  By default only these are allowed: a-z 0-9~%.:_-
+|
+| Leave blank to allow all characters -- but only if you are insane.
+|
+| DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
+|
+*/
+$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
+
+
+/*
+|--------------------------------------------------------------------------
+| Enable Query Strings
+|--------------------------------------------------------------------------
+|
+| By default CodeIgniter uses search-engine friendly segment based URLs:
+| example.com/who/what/where/
+|
+| By default CodeIgniter enables access to the $_GET array.  If for some
+| reason you would like to disable it, set 'allow_get_array' to FALSE.
+|
+| You can optionally enable standard query string based URLs:
+| example.com?who=me&what=something&where=here
+|
+| Options are: TRUE or FALSE (boolean)
+|
+| The other items let you set the query string 'words' that will
+| invoke your controllers and its functions:
+| example.com/index.php?c=controller&m=function
+|
+| Please note that some of the helpers won't work as expected when
+| this feature is enabled, since CodeIgniter is designed primarily to
+| use segment based URLs.
+|
+*/
+$config['allow_get_array']		= TRUE;
+$config['enable_query_strings'] = FALSE;
+$config['controller_trigger']	= 'c';
+$config['function_trigger']		= 'm';
+$config['directory_trigger']	= 'd'; // experimental not currently in use
+
+/*
+|--------------------------------------------------------------------------
+| Error Logging Threshold
+|--------------------------------------------------------------------------
+|
+| If you have enabled error logging, you can set an error threshold to
+| determine what gets logged. Threshold options are:
+| You can enable error logging by setting a threshold over zero. The
+| threshold determines what gets logged. Threshold options are:
+|
+|	0 = Disables logging, Error logging TURNED OFF
+|	1 = Error Messages (including PHP errors)
+|	2 = Debug Messages
+|	3 = Informational Messages
+|	4 = All Messages
+|
+| For a live site you'll usually only enable Errors (1) to be logged otherwise
+| your log files will fill up very fast.
+|
+*/
+$config['log_threshold'] = 0;
+
+/*
+|--------------------------------------------------------------------------
+| Error Logging Directory Path
+|--------------------------------------------------------------------------
+|
+| Leave this BLANK unless you would like to set something other than the default
+| application/logs/ folder. Use a full server path with trailing slash.
+|
+*/
+$config['log_path'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Date Format for Logs
+|--------------------------------------------------------------------------
+|
+| Each item that is logged has an associated date. You can use PHP date
+| codes to set your own date formatting
+|
+*/
+$config['log_date_format'] = 'Y-m-d H:i:s';
+
+/*
+|--------------------------------------------------------------------------
+| Cache Directory Path
+|--------------------------------------------------------------------------
+|
+| Leave this BLANK unless you would like to set something other than the default
+| system/cache/ folder.  Use a full server path with trailing slash.
+|
+*/
+$config['cache_path'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Encryption Key
+|--------------------------------------------------------------------------
+|
+| If you use the Encryption class or the Session class you
+| MUST set an encryption key.  See the user guide for info.
+|
+*/
+$config['encryption_key'] = 'orgbytes';
+
+/*
+|--------------------------------------------------------------------------
+| Session Variables
+|--------------------------------------------------------------------------
+|
+| 'sess_cookie_name'		= the name you want for the cookie
+| 'sess_expiration'			= the number of SECONDS you want the session to last.
+|   by default sessions last 7200 seconds (two hours).  Set to zero for no expiration.
+| 'sess_expire_on_close'	= Whether to cause the session to expire automatically
+|   when the browser window is closed
+| 'sess_encrypt_cookie'		= Whether to encrypt the cookie
+| 'sess_use_database'		= Whether to save the session data to a database
+| 'sess_table_name'			= The name of the session database table
+| 'sess_match_ip'			= Whether to match the user's IP address when reading the session data
+| 'sess_match_useragent'	= Whether to match the User Agent when reading the session data
+| 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
+|
+*/
+$config['sess_cookie_name']		= 'ideastar_session';
+$config['sess_expiration']		= 7200;
+$config['sess_expire_on_close']	= FALSE;
+$config['sess_encrypt_cookie']	= FALSE;
+$config['sess_use_database']	= FALSE;
+$config['sess_table_name']		= 'ideastar_sessions';
+$config['sess_match_ip']		= FALSE;
+$config['sess_match_useragent']	= TRUE;
+$config['sess_time_to_update']	= 300;
+
+/*
+|-------
+
+php
+orting() code below
+ *
+ */
+	define('ENVIRONMENT', 'development');
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By defaul

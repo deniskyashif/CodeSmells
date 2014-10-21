@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileSniffing\SnippetExtractor.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="FileSniffing\CodeFileSniffer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

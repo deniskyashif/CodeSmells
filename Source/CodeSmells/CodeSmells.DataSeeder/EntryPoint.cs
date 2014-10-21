@@ -5,6 +5,8 @@
 
     class EntryPoint
     {
+        static Random randomProvider=new Random();
+
         static void SniffForCodeFiles() 
         {
             //Sniff folders for code! 
@@ -20,6 +22,14 @@
             Console.WriteLine("File sniffing finished!");
         }
 
+        static void ExtractSnippetsFromFiles()
+        {
+            SnippetExtractor snippetExtractor = new SnippetExtractor("smellyFiles.txt", "snippets.txt", randomProvider);
+            Console.WriteLine("Started extracting snippets...");
+            snippetExtractor.ExtractSnippets();
+            Console.WriteLine("Snippet extracting finished!");
+        }
+
         static void Main(string[] args)
         {
             try
@@ -29,6 +39,7 @@
                 //First: Sniff for code files.
                 //SniffForCodeFiles();
                 //Second: Extract code snippets.
+                ExtractSnippetsFromFiles();
             }
             catch (Exception boom) 
             {

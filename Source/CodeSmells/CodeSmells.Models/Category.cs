@@ -12,6 +12,8 @@ namespace CodeSmells.Models
         C,
         Cpp,
         CSharp,
+        CSS,
+        HTML,
         Java,
         JavaScript,
         PHP,

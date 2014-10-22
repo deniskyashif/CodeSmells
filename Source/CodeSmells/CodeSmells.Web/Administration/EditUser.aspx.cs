@@ -21,17 +21,6 @@ namespace CodeSmells.Web.Administration
         protected void Page_Load(object sender, EventArgs e)
         {
             userId = this.Request.QueryString["userId"];
-            var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var roles = manager.GetRoles(userId);
-
-            if (roles.Contains(UserRoleNames.Administrator))
-            {
-                this.BtnToggleAdminRole.Text = "Remove Admin Rights";
-            }
-            else if (roles.Contains(UserRoleNames.Banned))
-            {
-                this.BtnBanUser.Text = "Unban";
-            }
         }
 
         protected void Page_PreRender(object sender, EventArgs e)
@@ -40,6 +29,7 @@ namespace CodeSmells.Web.Administration
 
             this.TbUserName.Text = user.UserName;
             this.TbEmail.Text = user.Email;
+
             var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var roles = manager.GetRoles(userId);
 
@@ -67,6 +57,7 @@ namespace CodeSmells.Web.Administration
                 manager.AddToRole(userId, UserRoleNames.Administrator);
             }
             this.Data.SaveChanges();
+            Response.Redirect(Request.RawUrl);
         }
 
         protected void BtnBanUser_Click(object sender, EventArgs e)
@@ -83,6 +74,7 @@ namespace CodeSmells.Web.Administration
                 manager.AddToRole(userId, UserRoleNames.Banned);
             }
             this.Data.SaveChanges();
+            Response.Redirect(Request.RawUrl);
         }
 
         protected void LinkBtnSaveUser_Click(object sender, EventArgs e)

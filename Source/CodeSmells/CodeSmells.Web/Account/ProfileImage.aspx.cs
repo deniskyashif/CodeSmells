@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace CodeSmells.Web.Account
+﻿namespace CodeSmells.Web.Account
 {
+    using System;
+    using System.IO;
     using Microsoft.AspNet.Identity;
 
     public partial class ProfileImage : BasePage
@@ -16,22 +10,21 @@ namespace CodeSmells.Web.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
 
         protected void OnUploadBtn_Click(object sender, EventArgs e)
         {
-            if (this.UploadImage.HasFile)
+            if(this.UploadImage.HasFile)
             {
-                if (this.UploadImage.PostedFile.ContentType == "image/jpeg" ||
-                    this.UploadImage.PostedFile.ContentType == "image/gif" ||
-                    this.UploadImage.PostedFile.ContentType == "image/png")
+                if(this.UploadImage.PostedFile.ContentType == "image/jpeg" ||
+                   this.UploadImage.PostedFile.ContentType == "image/gif" ||
+                   this.UploadImage.PostedFile.ContentType == "image/png")
                 {
                     var user = this.Data.Users.Find(this.User.Identity.GetUserId());
 
                     var filename = this.User.Identity.Name + Path.GetExtension(this.UploadImage.FileName);
-                    this.UploadImage.SaveAs(Server.MapPath("~/Uploads/Images/") + filename);
+                    this.UploadImage.SaveAs(this.Server.MapPath("~/Uploads/Images/") + filename);
                     user.ProfileImage = filename;
                     this.Data.SaveChanges();
                 }

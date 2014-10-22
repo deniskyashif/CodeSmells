@@ -12,8 +12,6 @@
             <li><a class="btn btn-primary" runat="server" href="~/">Post Management</a></li>
         </ul>
     </nav>
-    <br />
-    <br />
     <div class="container"> 
         <asp:ContentPlaceHolder ID="ContentPlaceHolderAdminArea" runat="server" />
     </div>

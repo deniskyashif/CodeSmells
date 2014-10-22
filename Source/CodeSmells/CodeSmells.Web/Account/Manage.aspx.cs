@@ -2,13 +2,10 @@
 {
     using System;
     using System.Web;
-    using System.Web.UI;
-    using Microsoft.Ajax.Utilities;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
     using Models;
-    using System.IO;
 
     public partial class Manage : BasePage
     {
@@ -47,7 +44,7 @@
         protected void Page_Load()
         {
             var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            
+
             this.HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(this.User.Identity.GetUserId()));
 
             // Enable this after setting up two-factor authentientication
@@ -148,7 +145,5 @@
 
             this.Data.SaveChanges();
         }
-
-       
     }
 }

@@ -68,7 +68,6 @@
         {
             if(this.Context.User.IsInRole(UserRoleNames.Administrator))
             {
-                
             }
         }
 

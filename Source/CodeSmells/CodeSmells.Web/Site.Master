@@ -1,5 +1,4 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CodeSmells.Web.SiteMaster" %>
-<%@ Import Namespace="System.Activities.Statements" %>
 <%@ Import Namespace="CodeSmells.Models" %>
 
 <!DOCTYPE html>
@@ -11,7 +10,7 @@
         <title>CodeSmells - <%: this.Page.Title %></title>
         <asp:PlaceHolder runat="server">
             <%: Scripts.Render("~/bundles/modernizr") %>
-            <%: Scripts.Render("~/bundles/prettyfier")%>
+            <%: Scripts.Render("~/bundles/prettyfier") %>
         </asp:PlaceHolder>
         <webopt:bundlereference runat="server" path="~/Content/css" />
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -64,11 +63,12 @@
                                     <li>
                                         <a runat="server" href="~/Posts/CreatePost" title="Add New Code Smell">Create</a>
                                     </li>
-                                    <% if(this.Context.User.IsInRole(UserRoleNames.Administrator)){%>
+                                    <% if(this.Context.User.IsInRole(UserRoleNames.Administrator))
+                                       { %>
                                     <li>
                                         <asp:HyperLink runat="server" href="/Administration/AdminHome" ID="HlAdminPanel">Administration</asp:HyperLink>
                                     </li>   
-                                    <%}%>
+                                    <% } %>
                                     <li>
                                         <a runat="server" href="~/Account/Manage" title="Manage your account">
                                             Hello, <%: this.Context.User.Identity.GetUserName() %> !

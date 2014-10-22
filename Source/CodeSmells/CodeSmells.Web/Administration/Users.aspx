@@ -5,7 +5,7 @@
     
     <asp:GridView CssClass="table table-striped table-bordered" ID="GridViewUsers" runat="server"
         AutoGenerateColumns="False" DataKeyNames="Id"
-        PageSize="10" AllowPaging="true" AllowSorting="true"
+        PageSize="2" AllowPaging="true" AllowSorting="true"
         ItemType="CodeSmells.Models.User"
         SelectMethod="GridViewUsers_GetData">
         <Columns>

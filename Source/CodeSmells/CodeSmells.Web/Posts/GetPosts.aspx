@@ -12,8 +12,9 @@
     </asp:GridView>-->
     <h2><%: this.Title %>.</h2>
     <ul ID="CategoriesList" runat="server">
-      <% foreach(var item in collection) { %>
-         <li><%=item%></li>
+      <% foreach(var item in this.collection)
+         { %>
+         <li><%= item %></li>
       <% } %>
     </ul>
     <h3><%: this.test.Title %></h3>

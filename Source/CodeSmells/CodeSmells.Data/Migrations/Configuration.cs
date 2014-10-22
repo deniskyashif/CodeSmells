@@ -34,15 +34,24 @@ namespace CodeSmells.Data.Migrations
                 manager.Create(role);
             }
 
-            //if (!context.Users.Any(u => u.UserName == "administrator1@codesmells.com"))
-            //{
-            //    var store = new UserStore<User>(context);
-            //    var manager = new UserManager<User>(store);
-            //    var user = new User { UserName = "administrator1", Email = "administrator1@codesmells.com" };
+            if (!context.Users.Any(u => u.UserName == "admin@codesmells.com"))
+            {
+                var store = new UserStore<User>(context);
+                var manager = new UserManager<User>(store);
+                var user = new User { UserName = "admin@codesmells.com", Email = "admin@codesmells.com" };
 
-            //    manager.Create(user, "123456");
-            //    manager.AddToRole(user.Id, UserRoleNames.Administrator);
-            //}
+                manager.Create(user, "123456");
+                manager.AddToRole(user.Id, UserRoleNames.Administrator);
+            }
+
+            if (!context.Users.Any(u => u.UserName == "user@codesmells.com"))
+            {
+                var store = new UserStore<User>(context);
+                var manager = new UserManager<User>(store);
+                var user = new User { UserName = "user@codesmells.com", Email = "user@codesmells.com" };
+
+                manager.Create(user, "123456");
+            }
         }
     }
 }

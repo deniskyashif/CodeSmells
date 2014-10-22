@@ -3,12 +3,14 @@
     using System;
     using System.Web;
     using System.Web.UI;
+    using Microsoft.Ajax.Utilities;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
     using Models;
+    using System.IO;
 
-    public partial class Manage : Page
+    public partial class Manage : BasePage
     {
         protected string SuccessMessage { get; private set; }
 
@@ -25,10 +27,18 @@
             return manager.HasPassword(this.User.Identity.GetUserId());
         }
 
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            var user = this.Data.Users.Find(this.User.Identity.GetUserId());
+
+            this.TbUserName.Text = user.UserName;
+            this.TbEmail.Text = user.Email;
+        }
+
         protected void Page_Load()
         {
             var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-
+            
             this.HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(this.User.Identity.GetUserId()));
 
             // Enable this after setting up two-factor authentientication
@@ -120,5 +130,16 @@
 
             this.Response.Redirect("/Account/Manage");
         }
+
+        protected void LinkBtnSaveUser_Click(object sender, EventArgs e)
+        {
+            var user = this.Data.Users.Find(this.User.Identity.GetUserId());
+            user.UserName = this.TbUserName.Text;
+            user.Email = this.TbEmail.Text;
+
+            this.Data.SaveChanges();
+        }
+
+       
     }
 }

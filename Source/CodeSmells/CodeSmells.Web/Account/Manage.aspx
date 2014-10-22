@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Manage Account" Language="C#" MasterPageFile="~/Site.Master" 
+﻿<%@ Page Title="Manage Account" Language="C#" MasterPageFile="~/Site.Master"
     AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="CodeSmells.Web.Account.Manage" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
@@ -16,7 +16,7 @@
                 <h4>Change your account settings</h4>
                 <hr />
                 <dl class="dl-horizontal">
-                    <dt>Profile</dt>
+                    <dt>Password</dt>
                     <dd>
                         <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Change]" Visible="false" ID="ChangePassword" runat="server" />
                         <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Create]" Visible="false" ID="CreatePassword" runat="server" />
@@ -26,9 +26,21 @@
         </div>
         <div class="col-md-12">
             <div class="form-horizontal">
-                <h4>Go to your profile: </h4>
+                <h4>Manage your profile information</h4>
                 <hr />
-                
+                <div class="form-group">
+                    <asp:Label Text="Username" runat="server" />
+                    <asp:TextBox ID="TbUserName" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <asp:Label Text="Email" runat="server" />
+                    <asp:TextBox ID="TbEmail" runat="server" CssClass="form-control" />
+                </div>
+                <br />
+                <asp:LinkButton ID="LinkBtnSaveUser" runat="server" CssClass="btn btn-default"
+                    Text="Save Changes" OnClick="LinkBtnSaveUser_Click" />
+                <br />
             </div>
         </div>
     </div>

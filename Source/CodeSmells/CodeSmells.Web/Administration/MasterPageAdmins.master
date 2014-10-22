@@ -3,7 +3,7 @@
 
 <asp:Content ID="ContentPage" ContentPlaceHolderID="MainContent" runat="server">
     <header>
-        <h2>Admin Area</h2>
+        <h2>Administration Area</h2>
     </header>
     <nav>
         <ul class="list-inline">

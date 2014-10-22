@@ -39,12 +39,13 @@
             </asp:ScriptManager>
 
             <div class="navbar navbar-inverse navbar-fixed-top">
-                <div class="container">
+                <div class="navbar-inner">
+                <div class="container">                    
                     <div class="navbar-header">
-                        <a class="navbar-brand" runat="server" href="~/">CodeSmells</a>
+                        <a class="brand" runat="server" href="~/">CodeSmells</a>
                     </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
                             <li><a runat="server" href="~/">Home</a></li>
                             <li><a runat="server" href="~/Posts/GetPosts.aspx">Posts</a></li>
                             <li><a runat="server" href="~/About">About</a></li>
@@ -75,6 +76,7 @@
                         </asp:LoginView>
                     </div>
                 </div>
+                    </div>
             </div>
             <div class="container body-content">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">

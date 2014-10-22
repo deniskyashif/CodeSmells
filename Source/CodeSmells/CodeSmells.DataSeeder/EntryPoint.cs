@@ -1,6 +1,9 @@
 ﻿namespace CodeSmells.DataSeeder
 {
     using System;
+    using System.IO;
+    using System.Linq;
+    using System.Collections.Generic;
     using FileSniffing;
     using CodeSmells.Models;
     using CodeSmells.Data;
@@ -10,6 +13,11 @@
     {
         static Random randomProvider=new Random();
 
+        static string[] categories = new string[] {"PHP", "JS", "HTML", "CS", "CSS"};
+
+        static Dictionary<string, List<string>> snippets = new Dictionary<string, List<string>>();
+
+        //TODO: Major refactoring
         //TODO: Extract some constants
 
         static void SniffForCodeFiles() 
@@ -45,12 +53,70 @@
             UserGenerator userGenerator = new UserGenerator(codeSmellsData);
             userGenerator.Generate();
             Console.WriteLine("Fake users generated!");
-        }
+        }        
 
-        /*static void GenerateFakePosts()
+        static void GenerateFakePosts()
         { 
-            
-        }*/
+            //List<Post> posts=new List<Post>();
+            //load snippets
+            //snippets.A
+            foreach (string categ in categories)
+            {
+                snippets.Add(categ.ToLower(),new List<string>());
+            }
+
+            using (StreamReader snippetsReader = new StreamReader("snippets.txt")) 
+            {
+                string line = "";
+                //assign language to post title
+                string currentKey = "";
+                string currentSnippet = "";
+                while ((line = snippetsReader.ReadLine()) != null)
+                {
+                    string trimmedLine = line.Trim();
+                    if (snippets.ContainsKey(trimmedLine)) 
+                    {
+                        if (currentKey != "" && currentSnippet != "")
+                        {
+                            snippets[currentKey].Add(currentSnippet);
+                            currentKey = "";
+                            currentSnippet="";
+                        }
+                        //
+                        currentKey = trimmedLine;
+                    }
+                    else if (currentKey != "")
+                    {
+                        currentSnippet += trimmedLine;
+                    }
+                }            
+            }
+            //assign snippets to post titles
+            //load users and assign random user to a post
+            User[] users = codeSmellsData.Users.All().ToArray();
+            //load post titles
+            using(StreamReader postTitlesReader = new StreamReader("postTitles.txt"))
+            {
+                string phrase = "";
+                //assign language to post title
+                while ((phrase = postTitlesReader.ReadLine()) != null)
+                {
+                    string category = categories[randomProvider.Next(0, categories.Length - 1)];
+                    string catToLower = category.ToLower();
+                    string snippet = snippets[catToLower][randomProvider.Next(0, snippets[catToLower].Count - 1)];
+                    //create post objects 
+                    codeSmellsData.Posts.Add(new Post() { 
+                        Title=String.Format(phrase,category),
+                        //Author=users[randomProvider.Next(0,users.Length-1)],
+                        AuthorId = users[randomProvider.Next(0, users.Length - 1)].Id,
+                        Body=snippet
+                    });
+                    snippets[catToLower].Remove(snippet);
+                }                
+            }
+            //save post objects
+            codeSmellsData.SaveChanges();
+        }
 
         static void Main(string[] args)
         {
@@ -63,9 +129,9 @@
                 //Second: Extract code snippets.
                 //ExtractSnippetsFromFiles();
                 //Third: Generate some users.
-                GenerateFakeUsers();
+                //GenerateFakeUsers();
                 //Get required info and generate posts
-                //GenerateFakePosts()
+                GenerateFakePosts();
 
             }
             catch (Exception boom) 

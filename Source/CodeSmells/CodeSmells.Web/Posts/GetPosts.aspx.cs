@@ -1,4 +1,6 @@
-﻿namespace CodeSmells.Web.Posts
+﻿using System.Data.Entity;
+
+namespace CodeSmells.Web.Posts
 {
     using System;
     using System.Linq;
@@ -12,6 +14,14 @@
         public IQueryable<Post> GetAllPosts()
         {
             var query = this.Data.Posts.All();
+            //    .Select(p => new Post
+            //{
+            //    Author = this.Data.Users.Find(p.AuthorId).UserName,
+            //    Title = p.Title,
+            //    Body = p.Body,
+            //    Ratings = p.Ratings,
+            //    Category = p.Category
+            //});
             return query;
         }
 

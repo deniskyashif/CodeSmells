@@ -1,6 +1,7 @@
 ﻿namespace CodeSmells.Models
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -32,8 +33,8 @@
 
         public int Rating
         {
-            get { return 1; }
-            //get { return this.Ratings.Sum(r => (int)r.Type); }
+            //get { return 1; }
+            get { return this.Ratings.Sum(r => (int)r.Type); }
         }
     }
 }

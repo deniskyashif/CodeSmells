@@ -13,21 +13,12 @@ namespace CodeSmells.Web.Posts {
     public partial class GetPosts {
         
         /// <summary>
-        /// PostsGridView control.
+        /// GetAllPostsGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView PostsGridView;
-        
-        /// <summary>
-        /// CategoriesList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CategoriesList;
+        protected global::System.Web.UI.WebControls.GridView GetAllPostsGridView;
     }
 }

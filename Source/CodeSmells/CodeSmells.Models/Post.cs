@@ -20,6 +20,8 @@
 
         public string Body { get; set; }
 
+        public Category Category { get; set; }
+
         [ForeignKey("Author")]
         public string AuthorId { get; set; }
 

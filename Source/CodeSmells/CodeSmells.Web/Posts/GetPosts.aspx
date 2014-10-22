@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="Posts" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GetPosts.aspx.cs" Inherits="CodeSmells.Web.Posts.GetPosts" %>
 <asp:Content ID="GetPostsContent" ContentPlaceHolderID="MainContent" runat="server">
-<<<<<<< HEAD
     <div class="container">
         <div class="well">
             <div class="table table-striped table-hover">
@@ -21,25 +20,24 @@
         </div>
     </div>
     <%--<h2><%: this.Title %>.</h2>
-=======
+
     <h2><%: this.Title %>.</h2>
     <h4>Categories</h4>
     <hr/>
->>>>>>> 7b54a55775373e95e1469b78b481cc8423928bee
+
     <ul ID="CategoriesList" runat="server">
       <% foreach(var cat in Categories) { %>
          <li><a href="#"><%=cat.CategoryName%>(<%=cat.PostsCount%>)</a></li>
       <% } %>
     </ul>
-<<<<<<< HEAD
+
     <h3><%: this.test.Title %></h3>
-    <pre class="prettyprint linenums"><%: this.test.Body %></pre>--%>
-=======
+    <pre class="prettyprint linenums"><%: this.test.Body %></pre>
+
     <h4>All Codes</h4>
     <hr/>
     <% foreach(var post in Posts) { %>
     <h3><%=post.Title%></h3><%=post.Author.UserName%> posted this in <%=post.Category%>
     <pre class="prettyprint linenums"><%=HttpUtility.HtmlEncode(post.Body)%></pre>
-    <% } %>
->>>>>>> 7b54a55775373e95e1469b78b481cc8423928bee
+    <% } %>--%>
 </asp:Content>

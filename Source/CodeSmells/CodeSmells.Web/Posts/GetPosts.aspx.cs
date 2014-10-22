@@ -12,14 +12,17 @@
     public partial class GetPosts : BasePage
     {
         public IQueryable<Post> GetAllPosts()
-        {
-            
+        {            
             var query =  this.Data.Posts.All();
             return query;
         }
-        protected void Page_Load(object sender, EventArgs e)
-        {
 
+        //private void ExtractCategories
+
+        public string[] collection=new string[]{"a","b","c","d"};
+
+        protected void Page_Load(object sender, EventArgs e)
+        {            
         }
     }
 }

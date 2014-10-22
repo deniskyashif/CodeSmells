@@ -17,7 +17,6 @@
 
         static Dictionary<string, List<string>> snippets = new Dictionary<string, List<string>>();
 
-
         static void Main(string[] args)
         {
             try

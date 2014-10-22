@@ -391,6 +391,7 @@
     <Compile Include="Posts\CreatePost.aspx.designer.cs">
       <DependentUpon>CreatePost.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Posts\Enumeration.cs" />
     <Compile Include="Posts\GetPosts.aspx.cs">
       <DependentUpon>GetPosts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

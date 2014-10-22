@@ -1,13 +1,9 @@
-﻿using CodeSmells.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace CodeSmells.Web.Administration
+﻿namespace CodeSmells.Web.Administration
 {
+    using System;
+    using System.Linq;
+    using Models;
+
     public partial class Users : BasePage
     {
         protected void Page_PreRender(object sender, EventArgs e)

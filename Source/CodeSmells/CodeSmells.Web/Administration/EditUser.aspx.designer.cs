@@ -13,6 +13,15 @@ namespace CodeSmells.Web.Administration {
     public partial class EditUser {
         
         /// <summary>
+        /// ImgProfileImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImgProfileImage;
+        
+        /// <summary>
         /// TbUserName control.
         /// </summary>
         /// <remarks>

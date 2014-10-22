@@ -6,14 +6,12 @@
         <h2>Administration Area</h2>
     </header>
     <nav>
-        <ul class="list-inline">
+        <ul class="list-inline inline">
             <li><a class="btn btn-primary" runat="server" href="~/Administration/AdminHome">Admin Home</a></li>
             <li><a class="btn btn-primary" runat="server" href="~/Administration/Users">User Management</a></li>
             <li><a class="btn btn-primary" runat="server" href="~/">Post Management</a></li>
         </ul>
     </nav>
-    <br />
-    <br />
     <div class="container"> 
         <asp:ContentPlaceHolder ID="ContentPlaceHolderAdminArea" runat="server" />
     </div>

@@ -38,7 +38,7 @@
                     <asp:TextBox ID="TbEmail" runat="server" CssClass="form-control" />
                 </div>
                 <br />
-                <asp:LinkButton ID="LinkBtnSaveUser" runat="server" CssClass="btn btn-default"
+                <asp:LinkButton ID="LinkBtnSaveUser" runat="server" CssClass="btn btn-success"
                     Text="Save Changes" OnClick="LinkBtnSaveUser_Click" />
                 <br />
             </div>

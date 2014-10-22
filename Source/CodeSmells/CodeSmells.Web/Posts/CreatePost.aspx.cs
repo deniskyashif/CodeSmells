@@ -14,6 +14,7 @@ namespace CodeSmells.Web.Posts
         {
             var post = new Post();
             post.AuthorId = this.User.Identity.GetUserId();
+            post.Category = (Category)Enum.Parse(typeof(Category), this.CategoryDropDownList.SelectedValue);
             TryUpdateModel(post);
             if (ModelState.IsValid)
             {
@@ -30,9 +31,16 @@ namespace CodeSmells.Web.Posts
         {
             Response.Redirect("GetPosts.aspx"); //chage to posts
         }
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                this.CategoryDropDownList.DataSource = Enumeration.GetAll<Category>();
+                this.CategoryDropDownList.DataTextField = "Value";
+                this.CategoryDropDownList.DataValueField = "Key";
+                this.CategoryDropDownList.DataBind();
+            }
         }
     }
 }

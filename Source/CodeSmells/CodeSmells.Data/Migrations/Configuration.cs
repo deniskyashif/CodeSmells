@@ -34,7 +34,7 @@ namespace CodeSmells.Data.Migrations
                 manager.Create(role);
             }
 
-            if (!context.Users.Any(u => u.UserName == "admin@codesmells.com"))
+            if (!context.Users.Any(u => u.Email == "admin@codesmells.com"))
             {
                 var store = new UserStore<User>(context);
                 var manager = new UserManager<User>(store);
@@ -44,7 +44,7 @@ namespace CodeSmells.Data.Migrations
                 manager.AddToRole(user.Id, UserRoleNames.Administrator);
             }
 
-            if (!context.Users.Any(u => u.UserName == "user@codesmells.com"))
+            if (!context.Users.Any(u => u.Email == "user@codesmells.com"))
             {
                 var store = new UserStore<User>(context);
                 var manager = new UserManager<User>(store);

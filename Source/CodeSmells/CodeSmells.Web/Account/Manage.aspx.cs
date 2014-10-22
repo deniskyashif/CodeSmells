@@ -33,6 +33,15 @@
 
             this.TbUserName.Text = user.UserName;
             this.TbEmail.Text = user.Email;
+
+            if(!string.IsNullOrEmpty(user.ProfileImage))
+            {
+                this.ImgProfileImage.ImageUrl = ("/Uploads/Images/" + user.ProfileImage);
+            }
+            else
+            {
+                this.ImgProfileImage.ImageUrl = ("/Uploads/Images/default.jpg");
+            }
         }
 
         protected void Page_Load()

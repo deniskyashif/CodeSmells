@@ -41,6 +41,15 @@ namespace CodeSmells.Web.Administration
             {
                 this.BtnBanUser.Text = "Unban";
             }
+
+            if (!string.IsNullOrEmpty(user.ProfileImage))
+            {
+                this.ImgProfileImage.ImageUrl = ("/Uploads/Images/" + user.ProfileImage);
+            }
+            else
+            {
+                this.ImgProfileImage.ImageUrl = ("/Uploads/Images/default.jpg");
+            }
         }
          
         protected void BtnToggleAdminRole_Click(object sender, EventArgs e)

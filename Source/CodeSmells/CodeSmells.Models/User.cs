@@ -21,6 +21,8 @@
             this.Ratings = new HashSet<Rating>();        
         }
 
+        public string ProfileImage { get; set; }
+
         public virtual ICollection<Post> Posts { get; set; }
 
         public virtual ICollection<Rating> Ratings { get; set; }

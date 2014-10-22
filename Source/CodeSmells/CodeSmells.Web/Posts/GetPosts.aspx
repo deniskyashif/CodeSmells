@@ -11,11 +11,17 @@
         </Columns>
     </asp:GridView>-->
     <h2><%: this.Title %>.</h2>
+    <h4>Categories</h4>
+    <hr/>
     <ul ID="CategoriesList" runat="server">
-      <% foreach(var item in collection) { %>
-         <li><%=item%></li>
+      <% foreach(var cat in Categories) { %>
+         <li><a href="#"><%=cat.CategoryName%>(<%=cat.PostsCount%>)</a></li>
       <% } %>
     </ul>
-    <h3><%: this.test.Title %></h3>
-    <pre class="prettyprint linenums"><%: this.test.Body %></pre>
+    <h4>All Codes</h4>
+    <hr/>
+    <% foreach(var post in Posts) { %>
+    <h3><%=post.Title%></h3><%=post.Author.UserName%> posted this in <%=post.Category%>
+    <pre class="prettyprint linenums"><%=HttpUtility.HtmlEncode(post.Body)%></pre>
+    <% } %>
 </asp:Content>

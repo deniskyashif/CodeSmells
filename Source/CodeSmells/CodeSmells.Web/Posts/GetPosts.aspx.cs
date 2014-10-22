@@ -8,25 +8,35 @@
     using System.Web.UI.WebControls;
 
     using CodeSmells.Models;
+    using CodeSmells.Web.Posts.ViewModels;
 
     public partial class GetPosts : BasePage
     {        
-        public IQueryable<Post> GetAllPosts()
+        public Post[] GetAllPosts()
         {            
-            var query =  this.Data.Posts.All();
-            return query;
+            var selectedPosts =  this.Data.Posts.All();
+            return selectedPosts.ToArray();
+        }
+
+        public CategoryViewModel[] GetAllCategories()
+        {
+            var selectedCategories = from p in this.Data.Posts.All()
+                                   group p.PostId by p.Category into g
+                                   select new CategoryViewModel(){ CategoryName = g.Key.ToString() ,
+                                   PostsCount=g.Count()};           
+            return selectedCategories.ToArray();
         }
 
         //private void ExtractCategories
 
-        public Post test;
+        public CategoryViewModel[] Categories;
 
-        public string[] collection=new string[]{"a","b","c","d"};
+        public Post[] Posts;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Post[] posts=this.GetAllPosts().ToArray();
-            test = posts[0];
+            this.Posts=this.GetAllPosts();            
+            this.Categories = this.GetAllCategories();
         }
     }
 }

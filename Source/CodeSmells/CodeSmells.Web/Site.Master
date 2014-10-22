@@ -63,6 +63,9 @@
                                         <a runat="server" href="~/Posts/CreatePost" title="Add New Code Smell">Create</a>
                                     </li>
                                     <li>
+                                        <asp:HyperLink runat="server" href="/Administration/AdminHome" ID="HlAdminPanel">Administration</asp:HyperLink>
+                                    </li>
+                                    <li>
                                         <a runat="server" href="~/Account/Manage" title="Manage your account">
                                             Hello, <%: this.Context.User.Identity.GetUserName() %> !
                                         </a>

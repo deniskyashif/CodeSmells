@@ -5,6 +5,7 @@
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.UI.WebControls;
+    using Models;
 
     public partial class SiteMaster : MasterPage
     {
@@ -65,6 +66,10 @@
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(this.Context.User.IsInRole(UserRoleNames.Administrator))
+            {
+                
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

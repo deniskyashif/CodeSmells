@@ -7,9 +7,9 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>CodeSmells - <%: this.Page.Title %></title>
-
         <asp:PlaceHolder runat="server">
             <%: Scripts.Render("~/bundles/modernizr") %>
+            <%: Scripts.Render("~/bundles/prettyfier")%>
         </asp:PlaceHolder>
         <webopt:bundlereference runat="server" path="~/Content/css" />
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -32,12 +32,11 @@
                     <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
                     <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
                     <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />                 
                     <asp:ScriptReference Name="WebFormsBundle" />
                     <%--Site Scripts--%>
                 </Scripts>
-            </asp:ScriptManager>
-
+            </asp:ScriptManager>           
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="navbar-inner">
                 <div class="container">                    

@@ -58,6 +58,11 @@ textarea.form-control {
     margin-left:5px;
 }
 
+.container 
+{
+    width:auto !important;
+}
+
 select.form-control 
 {
     

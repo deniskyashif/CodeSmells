@@ -6,7 +6,7 @@
 
     public partial class ProfileImage : BasePage
     {
-        private const int DefaultContentLength = 102400;
+        private const int MaxContentLength = 102400;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,8 +27,19 @@
                     this.UploadImage.SaveAs(this.Server.MapPath("~/Uploads/Images/") + filename);
                     user.ProfileImage = filename;
                     this.Data.SaveChanges();
+
+                    this.Response.Redirect("Manage");
                 }
             }
+        }
+
+        protected void OnSetDefault_Click(object sender, EventArgs e)
+        {
+            var user = this.Data.Users.Find(this.User.Identity.GetUserId());
+            user.ProfileImage = null;
+            this.Data.SaveChanges();
+
+            this.Response.Redirect("Manage");
         }
     }
 }

@@ -5,6 +5,8 @@
         <h3>
             Administration Home
         </h3>
-        <img src="https://cdn2.iconfinder.com/data/icons/ourea-icons/128/Administrative_Tools_256x256-32.png" alt="Alternate Text" />
+        <br />
+        <%--<img src="https://cdn2.iconfinder.com/data/icons/ourea-icons/128/Administrative_Tools_256x256-32.png" alt="Alternate Text" />--%>
+        <img src="https://cdn3.iconfinder.com/data/icons/security-and-protection/512/key_lock_unlock_security_access_flat_icon-128.png" alt="Alternate Text" />
     </p>
 </asp:Content>

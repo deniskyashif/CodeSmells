@@ -4,7 +4,7 @@
 
     <div class="jumbotron">
         <h1>Welcome to CodeSmells.com</h1>
-        <p>If you use this code for your course project do not forget to mention the source!</p>
+        <p>If you use this code for your course project do not forget to mention the source! Yes we sue.</p>
     </div>
 
     <div class="row">

@@ -11,4 +11,5 @@
     <br />
     <br />
     <asp:Button Text="Upload" CssClass="btn btn-success" OnClick="OnUploadBtn_Click" runat="server" />
+    <asp:Button Text="Set Default" CssClass="btn btn-success" OnClick="OnSetDefault_Click" runat="server" />
 </asp:Content>

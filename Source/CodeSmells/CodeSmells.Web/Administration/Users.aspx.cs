@@ -20,5 +20,16 @@
 
             return users;
         }
+
+        protected void OnSearchButton_Click(object sender, EventArgs e)
+        {
+            var searchTerm = this.TbSearch.Text;
+        }
+
+        protected void ResizePages(object sender, EventArgs e)
+        {
+            var pageSize = this.DdlPageSize.SelectedValue;
+            this.GridViewUsers.PageSize = int.Parse(pageSize);
+        }
     }
 }

@@ -176,6 +176,7 @@
     <Content Include="Account\Web.config" />
     <Content Include="Administration\Web.config" />
     <Content Include="Posts\GetPosts.aspx" />
+    <Content Include="Posts\PostDetails.aspx" />
     <Content Include="Posts\Web.config" />
     <Content Include="Administration\MasterPageAdmins.master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -437,6 +438,13 @@
     </Compile>
     <Compile Include="Posts\GetPosts.aspx.designer.cs">
       <DependentUpon>GetPosts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Posts\PostDetails.aspx.cs">
+      <DependentUpon>PostDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Posts\PostDetails.aspx.designer.cs">
+      <DependentUpon>PostDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Posts\ViewModels\CategoryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

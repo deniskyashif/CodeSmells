@@ -2,17 +2,26 @@
 <asp:Content ID="GetPostsContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="well">
-            <div class="table table-striped table-hover">
+            <div class="table table-striped">
                 <asp:GridView runat="server" ID="GetAllPostsGridView" 
                 ItemType="CodeSmells.Models.Post" 
                 DataKeyNames="PostId"
                 SelectMethod="GetAllPosts"
                 AutoGenerateColumns="False">
+                
                 <Columns>
                      <asp:BoundField DataField="Title" HeaderText="Title"/>
-                     <asp:BoundField DataField="Body" HeaderText="Code"/>
+                     <asp:TemplateField HeaderText="Code">
+                         <ItemTemplate>
+                             <asp:Label ID="Label1" runat="server" CssClass="prettyprint linenums" Text='<%# Bind("Body") %>'></asp:Label>
+                         </ItemTemplate>
+                     </asp:TemplateField>
                      <asp:BoundField DataField="Category" HeaderText="Category"/>
-                     <asp:BoundField DataField="Author.UserName" HeaderText="Author"/>
+                     <asp:TemplateField HeaderText="Author">
+                         <ItemTemplate>
+                             <asp:HyperLink ID="TextBox1" runat="server" NavigateUrl='<%# "~/Public/ProfileDetails.aspx?id="+Eval("AuthorId") %>' Text='<%# Bind("Author.UserName") %>'></asp:HyperLink>
+                         </ItemTemplate>
+                     </asp:TemplateField>
                      <asp:BoundField DataField="Rating" HeaderText="Rating"/>
                 </Columns>
                 </asp:GridView>

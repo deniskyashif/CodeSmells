@@ -179,8 +179,10 @@
     <Content Include="Posts\PostDetails.aspx" />
     <Content Include="Posts\Web.config" />
     <Content Include="Administration\MasterPageAdmins.master" />
+    <Content Include="Public\MasterPageProfile.master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Posts\CreatePost.aspx" />
+    <Content Include="Public\ProfileDetails.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\google-code-prettify\lang-apollo.js" />
@@ -448,6 +450,20 @@
     </Compile>
     <Compile Include="Posts\ViewModels\CategoryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public\MasterPageProfile.master.cs">
+      <DependentUpon>MasterPageProfile.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\MasterPageProfile.master.designer.cs">
+      <DependentUpon>MasterPageProfile.master</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ProfileDetails.aspx.cs">
+      <DependentUpon>ProfileDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ProfileDetails.aspx.designer.cs">
+      <DependentUpon>ProfileDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -474,7 +490,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Posts\Controls\" />
-    <Folder Include="Public\" />
     <Folder Include="Uploads\Images\" />
   </ItemGroup>
   <ItemGroup>

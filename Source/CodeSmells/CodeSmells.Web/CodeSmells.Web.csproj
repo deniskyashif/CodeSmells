@@ -474,6 +474,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Posts\Controls\" />
+    <Folder Include="Public\" />
     <Folder Include="Uploads\Images\" />
   </ItemGroup>
   <ItemGroup>

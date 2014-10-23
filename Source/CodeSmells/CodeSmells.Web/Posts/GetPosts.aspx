@@ -17,7 +17,10 @@
                      </asp:TemplateField>
                      <asp:TemplateField HeaderText="Code">
                          <ItemTemplate>
-                             <asp:Label ID="Label1" runat="server" CssClass="prettyprint linenums" Text='<%# Bind("Body") %>'></asp:Label>
+                             <pre class="prettyprint linenums">
+                                 <asp:Label ID="CodeLabel" runat="server" CssClass="prettyprint linenums" Text='<%# Bind("Body") %>'></asp:Label>
+                            </pre>
+                             
                          </ItemTemplate>
                      </asp:TemplateField>
                      <asp:BoundField DataField="Category" HeaderText="Category"/>

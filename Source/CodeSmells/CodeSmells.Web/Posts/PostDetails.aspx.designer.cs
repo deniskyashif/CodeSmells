@@ -22,6 +22,24 @@ namespace CodeSmells.Web.Posts {
         protected global::System.Web.UI.WebControls.DetailsView PostDetailsView;
         
         /// <summary>
+        /// UpVoteButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UpVoteButton;
+        
+        /// <summary>
+        /// DownVoteButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DownVoteButton;
+        
+        /// <summary>
         /// CommentsRepeater control.
         /// </summary>
         /// <remarks>
@@ -29,5 +47,14 @@ namespace CodeSmells.Web.Posts {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater CommentsRepeater;
+        
+        /// <summary>
+        /// CreateCommentFormView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FormView CreateCommentFormView;
     }
 }

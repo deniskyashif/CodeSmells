@@ -10,7 +10,11 @@
                 AutoGenerateColumns="False">
                 
                 <Columns>
-                     <asp:BoundField DataField="Title" HeaderText="Title"/>
+                     <asp:TemplateField HeaderText="Title">
+                         <ItemTemplate>
+                             <asp:HyperLink ID="TextBox1" runat="server" NavigateUrl='<%# "~/Posts/PostDetails.aspx?id="+Eval("PostId") %>' Text='<%# Bind("Title") %>'></asp:HyperLink>
+                         </ItemTemplate>
+                     </asp:TemplateField>
                      <asp:TemplateField HeaderText="Code">
                          <ItemTemplate>
                              <asp:Label ID="Label1" runat="server" CssClass="prettyprint linenums" Text='<%# Bind("Body") %>'></asp:Label>

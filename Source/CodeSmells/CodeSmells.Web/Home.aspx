@@ -7,6 +7,20 @@
         <p>If you use this code for your course project do not forget to mention the source! Yes we sue.</p>
     </div>
 
+    <div class="jumbotron">
+        <h1>Categories</h1>
+        <br />
+        <asp:Repeater runat="server" ID="PostsCategories">
+            <ItemTemplate>
+                <a href="Posts/GetPosts?category=<%#: Eval("Name") %>"><%#: Eval("Name") %></a>
+            </ItemTemplate>
+        </asp:Repeater>
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+
     <div class="container">
         <asp:Repeater runat="server" ID="LatestPosts" ItemType="CodeSmells.Models.Post">
             <ItemTemplate>

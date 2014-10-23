@@ -48,12 +48,40 @@ namespace CodeSmells.Web.Posts
 
             itemId = int.Parse(Request.Params["id"]);
             var query = this.GetPostById();
+
+            if (query.First().Ratings.FirstOrDefault(r => r.UserId == this.User.Identity.GetUserId()) != null)
+            {
+                this.UpVoteButton.Enabled = false;
+                this.DownVoteButton.Enabled = false;
+            }
+
             this.CommentsRepeater.DataSource = query.First().Comments.ToList();
             this.CommentsRepeater.DataBind();
         }
 
         protected void CancelButton_Click(object sender, EventArgs e)
         {
+            this.Response.Redirect("PostDetails.aspx?id=" + itemId);
+        }
+
+        protected void UpVoteButton_Click(object sender, EventArgs e)
+        {
+            this.RegisterVote(RatingType.Positive);
+        }
+
+        protected void DownVoteButton_Click(object sender, EventArgs e)
+        {
+            this.RegisterVote(RatingType.Negative);
+        }
+
+        private void RegisterVote(RatingType voteType)
+        {
+            var rating = new Rating();
+            rating.PostId = itemId;
+            rating.UserId = this.User.Identity.GetUserId();
+            rating.Type = voteType;
+            this.Data.Posts.Find(itemId).Ratings.Add(rating);
+            this.Data.SaveChanges();
             this.Response.Redirect("PostDetails.aspx?id=" + itemId);
         }
     }

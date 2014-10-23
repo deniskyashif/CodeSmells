@@ -30,4 +30,27 @@
             </div>
         </ItemTemplate>
     </asp:Repeater>
+    <h2>Add Comment</h2>
+    <div class="form-horizontal">
+        <asp:FormView runat="server" ID="CreateCommentFormView" 
+        ItemType="CodeSmells.Models.Comment" 
+        DataKeyNames="CommentId"
+        InsertMethod="AddComment"
+        OnItemInserted="AddCommentForm_ItemInserted" 
+        DefaultMode="Insert">
+            <InsertItemTemplate>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <asp:TextBox runat="server" Width="650" Height="300" ID="BodyTextBox" TextMode="MultiLine" CssClass="form-control" Text="<%#: BindItem.Body %>"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <asp:Button runat="server" Text="Add Comment" CommandName="Insert" CssClass="btn btn-default" />
+                        <asp:Button runat="server" Text="Cancel" CausesValidation="false" OnClick="CancelButton_Click" CssClass="btn btn-default" />
+                    </div>
+                </div>
+            </InsertItemTemplate>
+        </asp:FormView>
+    </div>
 </asp:Content>

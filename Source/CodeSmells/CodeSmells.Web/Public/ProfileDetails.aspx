@@ -20,8 +20,7 @@
                 <h3>Rank <strong><%#: "User rank here..." %></strong></h3>
                 <h3>Posts <strong><%#: this.GetUserPosts().Count() %></strong></h3>
                 <h3>Member since <strong><%#: "Some date here..." %></strong></h3>
-                <h3>Likes <strong><%#: "Count of likes to person posts" %></strong></h3>
-                <h3>Dislikes <strong><%#: "Count of dislikes to person posts" %></strong></h3>
+                <h3>Overal user ratings <strong><%#: this.GetUserRatings %></strong></h3>
             </div>
             <br />
         </div>
@@ -32,9 +31,11 @@
         ItemType="CodeSmells.Models.Post"
         SelectMethod="GetUserPosts">
         <Columns>
-            <asp:HyperLinkField DataNavigateUrlFields="PostId" DataNavigateUrlFormatString="~/Posts/PostDetails?id={0}" Text="Title" />
+            <asp:HyperLinkField DataNavigateUrlFields="PostId" DataNavigateUrlFormatString="~/Posts/PostDetails?id={0}" Text="Go to..." />
             <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
             <asp:BoundField DataField="Category" HeaderText="Category" SortExpression="Category" />
+            <asp:BoundField DataField="Rating" HeaderText="Rating" SortExpression="Rating" />
+            <asp:BoundField DataField="DateCreated" HeaderText="DateCreated" SortExpression="DateCreated" />
         </Columns>
     </asp:GridView>
 

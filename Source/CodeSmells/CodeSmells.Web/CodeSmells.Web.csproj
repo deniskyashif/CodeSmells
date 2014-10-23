@@ -464,6 +464,7 @@
     <Compile Include="Public\ProfileDetails.aspx.designer.cs">
       <DependentUpon>ProfileDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Public\VoteModel.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

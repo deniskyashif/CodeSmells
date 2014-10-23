@@ -49,5 +49,20 @@
         {
             return this.CurrentUser.Posts.AsQueryable();
         }
+
+        public int GetUserRatings
+        {
+            get
+            {
+                int ratingSum = 0;
+
+                foreach (var item in this.GetUserPosts())
+                {
+                    ratingSum += item.Rating;
+                }
+
+                return ratingSum;
+            }
+        }
     }
 }
